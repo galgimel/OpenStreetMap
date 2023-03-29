@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h2 th:text="'Hello there!'"></h2>
+<h1 th:text="'Enter the name of the object in Russia you want to find:'"></h1>
+<br>
+<form th:method="GET" th:action="@{/geo_location/{geo_object_name}(geo_object_name=)}">
+    <label for="name">Object name</label>
+    <input type="text" th:field="geo_object_name" id="name"/>
+    <input type="submit" value="What the coordinates?"/>
+</form>
+</body>
+</html>
