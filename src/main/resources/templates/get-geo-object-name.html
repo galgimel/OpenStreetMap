@@ -6,21 +6,11 @@
 </head>
 <body>
 <h2 th:text="'Hello there!'"></h2>
-<h2 th:text="'Enter the name of the object in Russia you want to find:'"></h2>
+<h2 th:text="'Enter the name of the object in Russia you want to find and click twice:'"></h2>
 <br>
-<!--<label for="name">Object name</label>-->
-<!--<input type="text" th:field="*{geoObject.name}" id="name"/>-->
-<!--<br>-->
-<!--<form th:method="GET" th:action="@{/geo_location/{geo_object_name}(geo_object_name=${geoObject.getName()})}">-->
-<!--    <input type="submit" value="What the coordinates?"/>-->
-<!--</form>-->
-
-<!--<label for="name">Object name</label>-->
-<!--<input type="search" th:field="*{geoObject.name}" id="name"/>-->
-<!--<br>-->
-<!--<form th:method="GET" th:action="@{/geo_location/{geo_object_name}(geo_object_name=${geoObject.getName()})}">-->
-<!--    <input type="submit" value="What the coordinates?"/>-->
-<!--</form>-->
-
+<form th:method="GET" th:action="@{/geo_location/{geo_object_name}(geo_object_name=*{geoObject.name})}">
+    <input type="text" th:field="*{geoObject.name}"/>
+    <input type="submit" value="What the coordinates?"/>
+</form>
 </body>
 </html>
