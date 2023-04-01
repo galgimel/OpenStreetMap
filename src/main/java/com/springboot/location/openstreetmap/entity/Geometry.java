@@ -1,8 +1,6 @@
 package com.springboot.location.openstreetmap.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.springboot.location.openstreetmap.service.GeoJsonDeserializer;
 import lombok.*;
 
 import java.util.Map;
@@ -11,10 +9,8 @@ import java.util.Map;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class GeoJson {
+public class Geometry {
     @JsonProperty("type")
     private String type;
-    @JsonProperty("coordinates")
-    @JsonDeserialize(using = GeoJsonDeserializer.class)
     private Map<String, Double> coordinates;
 }

@@ -1,10 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-$END$
+<h1 th:text="'Thats coordinates:'"></h1>
+<table>
+    <tr>
+        <td>Full object name:</td>
+        <td><p th:text="${geoObject.get(0).getName()}"/></td>
+    </tr>
+    <tr>
+        <td>Longitude:</td>
+        <td><p th:text="${geoObject.get(0).getLongitude()}"/></td>
+    </tr>
+    <tr>
+        <td>Latitude:</td>
+        <td><p th:text="${geoObject.get(0).getLatitude()}"/></td>
+    </tr>
+</table>
+<br>
+<hr>
+<input type="button" value="Main Page"
+       onclick="window.location.href = '/geo_location'"/>
 </body>
 </html>
