@@ -1,6 +1,6 @@
 package com.springboot.location.openstreetmap.controller;
 
-import com.springboot.location.openstreetmap.request.GeoObjectRequest;
+import com.springboot.location.openstreetmap.dto.GeoObjectRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +13,8 @@ import com.springboot.location.openstreetmap.service.GeoObjectService;
 @RequestMapping("/geo_location")
 public class GeoObjectController {
     private final GeoObjectService geoObjectService;
-    public GeoObjectController(GeoObjectService geoObjectService) {
+
+    public GeoObjectController(final GeoObjectService geoObjectService) {
         this.geoObjectService = geoObjectService;
     }
 
@@ -21,6 +22,7 @@ public class GeoObjectController {
     public String showFrontPage(@ModelAttribute("geoObject") final GeoObjectRequest request) {
         return "get-geo-object-name";
     }
+
     @GetMapping("/{geo_object_name}")
     public String getGeoObjectInfo(
         @PathVariable("geo_object_name") final String geoObjectName, final Model model

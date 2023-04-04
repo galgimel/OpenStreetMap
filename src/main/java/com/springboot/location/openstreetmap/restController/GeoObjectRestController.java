@@ -1,6 +1,6 @@
 package com.springboot.location.openstreetmap.restController;
 
-import com.springboot.location.openstreetmap.response.GeoObjectResponse;
+import com.springboot.location.openstreetmap.dto.GeoObjectResponse;
 import com.springboot.location.openstreetmap.service.GeoObjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +16,7 @@ public class GeoObjectRestController {
     private final GeoObjectService service;
 
     @Autowired
-    public GeoObjectRestController(GeoObjectService service) {
+    public GeoObjectRestController(final GeoObjectService service) {
         this.service = service;
     }
 

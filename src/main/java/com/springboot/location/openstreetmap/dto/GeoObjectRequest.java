@@ -1,4 +1,4 @@
-package com.springboot.location.openstreetmap.request;
+package com.springboot.location.openstreetmap.dto;
 
 import lombok.*;
 
@@ -7,5 +7,5 @@ import lombok.*;
 @ToString
 @AllArgsConstructor
 public class GeoObjectRequest {
- private final String name;
+    private final String name;
 }

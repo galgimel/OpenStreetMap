@@ -1,9 +1,8 @@
 package com.springboot.location.openstreetmap.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.springboot.location.openstreetmap.dto.CoordinatePoint;
 import lombok.*;
-
-import java.util.Map;
 
 @Getter
 @Setter
@@ -12,5 +11,5 @@ import java.util.Map;
 public class Geometry {
     @JsonProperty("type")
     private String type;
-    private Map<String, Double> coordinates;
+    private CoordinatePoint center;
 }
