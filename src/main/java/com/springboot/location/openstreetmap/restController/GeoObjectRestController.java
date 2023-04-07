@@ -21,7 +21,7 @@ public class GeoObjectRestController {
     }
 
     @GetMapping("/{geo_object_name}")
-    public List<GeoObjectResponse> showGeoObject(@PathVariable("geo_object_name") final String name) {
+    public GeoObjectResponse showGeoObject(@PathVariable("geo_object_name") final String name) {
         return service.getGeoObjectInfo(name);
     }
 }
